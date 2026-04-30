@@ -10,7 +10,7 @@ export const useAuth = () => {
     const checkAuth = async () => {
       try {
         const session = await authClient.getSession();
-        setUser(session?.data?.user || null);
+        setUser(session?.user || null);
       } catch (error) {
         console.error('Auth check error:', error);
         setUser(null);
