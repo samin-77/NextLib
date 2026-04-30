@@ -36,9 +36,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      await authClient.signIn.social({
-        provider: 'google',
-      });
+      window.location.href = '/api/auth/google';
     } catch (error) {
       toast.error('Google login failed');
     }
