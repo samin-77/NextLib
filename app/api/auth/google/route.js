@@ -1,5 +1,3 @@
 import { auth } from '@/lib/auth';
 
-export const GET = async (request) => {
-  return auth.handler.google(request);
-};
+export const GET = auth.handler.google;
