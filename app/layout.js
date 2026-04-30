@@ -4,7 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
 export const metadata = {
-  title: 'NextLib - Online Book Borrowing Platform',
+  title: 'nextlib - Online Book Borrowing Platform',
   description: 'A seamless and modern web application designed to digitize the traditional library experience.',
 };
 

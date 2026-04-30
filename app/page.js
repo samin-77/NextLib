@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-primary mb-6">
-              Welcome to NextLib
+              Welcome to nextlib
             </h1>
             <p className="text-xl text-base-content/80 mb-8">
               Your Digital Library Experience

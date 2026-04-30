@@ -73,7 +73,7 @@ const Footer = () => {
       
       <div>
         <p className="font-bold">
-          NextLib
+          nextlib
           <br />
           Online Book Borrowing Platform
         </p>

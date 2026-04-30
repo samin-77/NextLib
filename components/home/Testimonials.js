@@ -3,7 +3,7 @@ const Testimonials = () => {
     {
       name: 'Sarah Johnson',
       role: 'Student',
-      content: 'NextLib has completely transformed my reading experience. The digital library is amazing!',
+      content: 'nextlib has completely transformed my reading experience. The digital library is amazing!',
       rating: 5,
     },
     {

@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="navbar bg-base-100 shadow-lg">
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost text-xl font-bold text-primary">
-          📚 NextLib
+          📚 nextlib
         </Link>
       </div>
       
