@@ -38,7 +38,6 @@ const LoginPage = () => {
     try {
       await authClient.signIn.social({
         provider: 'google',
-        callbackURL: '/',
       });
     } catch (error) {
       toast.error('Google login failed');

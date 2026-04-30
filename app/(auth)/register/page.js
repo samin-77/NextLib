@@ -42,7 +42,6 @@ const RegisterPage = () => {
     try {
       await authClient.signIn.social({
         provider: 'google',
-        callbackURL: '/',
       });
     } catch (error) {
       toast.error('Google registration failed');
