@@ -1,4 +1,5 @@
 # NextLib - Online Book Borrowing Platform
+# Deployed on Vercel
 
 A modern, responsive web application designed to digitize the traditional library experience. Users can explore a vast collection of books, filter by categories, and borrow titles digitally.
 
