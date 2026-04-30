@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import toast from 'react-hot-toast';
 
 const BookDetailsPage = ({ params }) => {

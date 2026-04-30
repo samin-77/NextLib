@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { authClient } from '@/lib/auth';
+import { authClient } from '../../../lib/auth';
 import toast from 'react-hot-toast';
 
 const LoginPage = () => {

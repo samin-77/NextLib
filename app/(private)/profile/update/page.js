@@ -1,8 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/hooks/useAuth';
-import { authClient } from '@/lib/auth';
+import { useAuth } from '../../../hooks/useAuth';
+import { authClient } from '../../../lib/auth';
 import toast from 'react-hot-toast';
 
 const UpdateProfilePage = () => {
