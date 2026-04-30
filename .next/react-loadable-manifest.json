@@ -1,0 +1,32 @@
+{
+  "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./bun-sqlite-dialect-na--YwnN.mjs": {
+    "id": "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./bun-sqlite-dialect-na--YwnN.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_better-auth_kysely-adapter_dist_bun-sqlite-dialect-na--YwnN_mjs.js"
+    ]
+  },
+  "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./d1-sqlite-dialect-C2B7YsIT.mjs": {
+    "id": "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./d1-sqlite-dialect-C2B7YsIT.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_better-auth_kysely-adapter_dist_d1-sqlite-dialect-C2B7YsIT_mjs.js"
+    ]
+  },
+  "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./node-sqlite-dialect.mjs": {
+    "id": "node_modules/@better-auth/kysely-adapter/dist/index.mjs -> ./node-sqlite-dialect.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_better-auth_kysely-adapter_dist_node-sqlite-dialect_mjs.js"
+    ]
+  },
+  "node_modules/better-auth/dist/db/adapter-base.mjs -> @better-auth/memory-adapter": {
+    "id": "node_modules/better-auth/dist/db/adapter-base.mjs -> @better-auth/memory-adapter",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_better-auth_memory-adapter_dist_index_mjs.js"
+    ]
+  },
+  "node_modules/better-auth/dist/db/adapter-kysely.mjs -> ../adapters/kysely-adapter/index.mjs": {
+    "id": "node_modules/better-auth/dist/db/adapter-kysely.mjs -> ../adapters/kysely-adapter/index.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_better-auth_dist_adapters_kysely-adapter_index_mjs.js"
+    ]
+  }
+}
