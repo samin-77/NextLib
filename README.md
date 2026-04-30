@@ -15,16 +15,14 @@ A modern, responsive web application designed to digitize the traditional librar
 - **👤 User Profiles**: Private routes for user profile management and updates
 - **📱 Fully Responsive**: Mobile, tablet, and desktop optimized design
 - **🎨 Modern UI**: Beautiful design using Tailwind CSS and DaisyUI
-- **⚡ Smooth Animations**: Swiper.js for testimonials and Animate.css for smooth transitions
+- **⚡ Toast Notifications**: Beautiful toast notifications with react-hot-toast
 
 ## 🛠 Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Styling**: Tailwind CSS + DaisyUI
 - **Authentication**: BetterAuth
-- **Database**: MongoDB (via Mongoose)
-- **Animations**: Swiper.js + Animate.css
-- **Notifications**: React Hot Toast
+- **Data Storage**: JSON data (no external database)
 - **Deployment**: Vercel/Render ready
 
 ## 📦 NPM Packages Used
@@ -36,10 +34,7 @@ A modern, responsive web application designed to digitize the traditional librar
     "react": "^18",
     "react-dom": "^18",
     "better-auth": "^1.0.1",
-    "mongoose": "^8.4.1",
-    "react-hot-toast": "^2.4.1",
-    "swiper": "^11.1.4",
-    "animate.css": "^4.1.1"
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",

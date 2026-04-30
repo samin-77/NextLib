@@ -35,10 +35,10 @@ const UpdateProfilePage = () => {
         toast.success('Profile updated successfully!');
         router.push('/profile');
       } else {
-        toast.error(result.error?.message || 'Update failed');
+        toast.error(result.error?.message || 'Profile update failed');
       }
     } catch (error) {
-      toast.error('An error occurred while updating profile');
+      toast.error('An error occurred during profile update');
     } finally {
       setIsLoading(false);
     }

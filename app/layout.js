@@ -1,5 +1,4 @@
 import './globals.css';
-import 'animate.css';
 import { Toaster } from 'react-hot-toast';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
