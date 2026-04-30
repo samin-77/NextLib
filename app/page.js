@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
 import Banner from '../components/home/Banner';
 import Marquee from '../components/home/Marquee';
