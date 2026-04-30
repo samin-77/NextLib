@@ -178,8 +178,8 @@ This project is licensed under the MIT License.
 ## 📞 Contact
 
 For any inquiries or support, please contact:
-- Email: your-email@example.com
-- GitHub: your-username
+- Email: saminmahbub19@gmail.com
+- GitHub: samin.77
 
 ---
 
