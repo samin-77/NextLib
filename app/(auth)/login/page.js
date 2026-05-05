@@ -16,23 +16,19 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
-      console.log('Attempting login with:', { email, password });
       const result = await authClient.signIn.email({
         email,
         password,
       });
-      console.log('Login result:', result);
 
       if (result.data) {
         toast.success('Login successful!');
         router.push('/');
       } else {
-        console.error('Login error:', result.error);
         toast.error(result.error?.message || 'Login failed');
       }
     } catch (error) {
-      console.error('Login exception:', error);
-      toast.error(`Login error: ${error.message}`);
+      toast.error('Login failed');
     } finally {
       setIsLoading(false);
     }
@@ -40,7 +36,9 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      window.location.href = '/api/auth/google';
+      window.location.href = await authClient.signIn.social({
+        provider: 'google',
+      });
     } catch (error) {
       toast.error('Google login failed');
     }

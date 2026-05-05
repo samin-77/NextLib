@@ -32,7 +32,7 @@ const RegisterPage = () => {
         toast.error(result.error?.message || 'Registration failed');
       }
     } catch (error) {
-      toast.error('An error occurred during registration');
+      toast.error('Registration failed');
     } finally {
       setIsLoading(false);
     }
@@ -40,7 +40,9 @@ const RegisterPage = () => {
 
   const handleGoogleRegister = async () => {
     try {
-      window.location.href = '/api/auth/google';
+      window.location.href = await authClient.signIn.social({
+        provider: 'google',
+      });
     } catch (error) {
       toast.error('Google registration failed');
     }
