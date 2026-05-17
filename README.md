@@ -3,9 +3,6 @@
 
 A modern, responsive web application designed to digitize the traditional library experience. Users can explore a vast collection of books, filter by categories, and borrow titles digitally.
 
-## 🚀 Live URL
-[Your Live URL Here] (Deploy on Vercel/Render)
-
 ## ✨ Key Features
 
 - **📚 Vast Book Collection**: Browse through 12+ books across Story, Tech, and Science categories
@@ -159,17 +156,6 @@ online-book-platform/
 3. Connect your repository
 4. Add environment variables
 5. Deploy!
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ## 📞 Contact
 
