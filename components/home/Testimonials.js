@@ -53,7 +53,7 @@ const Testimonials = () => {
                 </div>
                 
                 <p className="text-base-content/70 text-center mb-6 italic">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
                 
                 <div className="text-center">

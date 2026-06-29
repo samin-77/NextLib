@@ -82,7 +82,7 @@ const Footer = () => {
       
       <div>
         <p className="text-base-content/60">
-          "Empowering readers worldwide with digital library experience"
+          &ldquo;Empowering readers worldwide with digital library experience&rdquo;
         </p>
       </div>
     </footer>

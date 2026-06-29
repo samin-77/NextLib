@@ -1,6 +1,4 @@
 'use client';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
 import Banner from '../components/home/Banner';
@@ -11,13 +9,6 @@ import Testimonials from '../components/home/Testimonials';
 
 export default function Home() {
   const { user, isLoading } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isLoading && !user) {
-      // Don't redirect, show landing message
-    }
-  }, [user, isLoading]);
 
   if (isLoading) {
     return (

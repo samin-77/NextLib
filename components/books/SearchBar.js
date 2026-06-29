@@ -1,16 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(searchTerm);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onSearch(searchTerm);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [searchTerm, onSearch]);
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
+    <div className="w-full max-w-md">
       <div className="form-control">
         <input
           type="text"
@@ -20,7 +22,7 @@ const SearchBar = ({ onSearch }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-    </form>
+    </div>
   );
 };
 

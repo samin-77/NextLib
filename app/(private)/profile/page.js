@@ -79,7 +79,9 @@ const ProfilePage = () => {
                   <div className="stat">
                     <div className="stat-title">Member Since</div>
                     <div className="stat-value text-lg">
-                      {new Date().toLocaleDateString()}
+                      {user.createdAt
+                        ? new Date(user.createdAt).toLocaleDateString()
+                        : 'N/A'}
                     </div>
                   </div>
                 </div>

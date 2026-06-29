@@ -101,6 +101,7 @@ const UpdateProfilePage = () => {
               <div className="form-control">
                 <div className="avatar">
                   <div className="w-20 rounded-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={imageUrl}
                       alt="Profile preview"

@@ -57,6 +57,7 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     alt="User avatar"
                     src={user.image || 'https://via.placeholder.com/40'}
