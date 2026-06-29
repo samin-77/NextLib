@@ -25,14 +25,15 @@ const WhyChooseUs = () => {
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+        <h2 className="text-3xl font-bold text-center mb-12 text-primary animate__animated animate__fadeInDown">
           Why Choose nextlib?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+              className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 animate__animated animate__fadeInUp"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="card-body text-center">
                 <div className="text-4xl mb-4">{feature.icon}</div>

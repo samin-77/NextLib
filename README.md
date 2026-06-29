@@ -1,53 +1,50 @@
 # nextlib - Online Book Borrowing Platform
-# Deployed on Vercel
 
-A modern, responsive web application designed to digitize the traditional library experience. Users can explore a vast collection of books, filter by categories, and borrow titles digitally.
+**Live URL:** [https://nextlib-iota.vercel.app](https://nextlib-iota.vercel.app)
 
-## ✨ Key Features
+A seamless and modern web application designed to digitize the traditional library experience. Users can explore a vast collection of books, filter by categories, and borrow titles digitally. The platform prioritizes security and performance using BetterAuth, Next.js, and DaisyUI.
 
-- **📚 Vast Book Collection**: Browse through 12+ books across Story, Tech, and Science categories
-- **🔐 Secure Authentication**: BetterAuth with Google Social Login and Email/Password authentication
-- **🔍 Advanced Search**: Search books by title with real-time filtering
-- **📂 Category Filtering**: Functional sidebar to filter books by Story, Tech, or Science
-- **📖 Book Details**: Detailed book information with borrowing functionality
-- **👤 User Profiles**: Private routes for user profile management and updates
-- **📱 Fully Responsive**: Mobile, tablet, and desktop optimized design
-- **🎨 Modern UI**: Beautiful design using Tailwind CSS and DaisyUI
-- **⚡ Toast Notifications**: Beautiful toast notifications with react-hot-toast
+## Key Features
 
-## 🛠 Tech Stack
+- **Book Catalog**: Browse 12 books across Story, Tech, and Science categories
+- **Search & Filter**: Real-time search by title and category sidebar filtering
+- **Authentication**: Email/Password registration and login, plus Google Social OAuth
+- **Protected Routes**: Book details and profile pages are private to logged-in users
+- **Borrow System**: One-click borrow with availability tracking and toast confirmations
+- **Profile Management**: View user info and update name/photo
+- **Responsive Design**: Fully responsive on mobile, tablet, and desktop
+- **Smooth Animations**: Entrance animations powered by Animate.css
+- **Toast Notifications**: Beautiful feedback with react-hot-toast
+
+## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Styling**: Tailwind CSS + DaisyUI
-- **Authentication**: BetterAuth
-- **Data Storage**: JSON data (no external database)
-- **Deployment**: Vercel/Render ready
+- **Authentication**: BetterAuth (email/password + Google OAuth)
+- **Data Storage**: JSON data file (no external database required)
+- **Animations**: Animate.css
+- **Notifications**: react-hot-toast
+- **Deployment**: Vercel
 
-## 📦 NPM Packages Used
+## NPM Packages Used
 
-```json
-{
-  "dependencies": {
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
-    "better-auth": "^1.0.1",
-    "react-hot-toast": "^2.4.1"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.1",
-    "daisyui": "^4.12.10",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5"
-  }
-}
-```
+| Package | Purpose |
+|---------|---------|
+| next | React framework with App Router |
+| react / react-dom | UI library |
+| better-auth | Authentication (email/password + Google OAuth) |
+| react-hot-toast | Toast notifications |
+| animate.css | CSS animations |
+| tailwindcss | Utility-first CSS framework |
+| daisyui | Tailwind CSS component library |
+| autoprefixer | CSS vendor prefixes |
+| eslint / eslint-config-next | Code linting |
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/NextLib.git
+   git clone https://github.com/samin-77/NextLib.git
    cd NextLib
    ```
 
@@ -60,109 +57,91 @@ A modern, responsive web application designed to digitize the traditional librar
    ```bash
    cp .env.local.example .env.local
    ```
-   Fill in your environment variables:
-   ```
-   MONGODB_URI=mongodb://localhost:27017/nextlib
-   BETTER_AUTH_SECRET=your-secret-key-here
-   GOOGLE_CLIENT_ID=your-google-client-id
-   GOOGLE_CLIENT_SECRET=your-google-client-secret
-   NEXTAUTH_URL=http://localhost:3000
-   ```
+   Fill in your credentials (see `.env.local.example` for all required vars).
 
 4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+5. **Open your browser**  
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-online-book-platform/
-├── app/
-│   ├── (auth)/
-│   │   ├── login/page.tsx
-│   │   └── register/page.tsx
-│   ├── (private)/
-│   │   ├── book/[id]/page.tsx
-│   │   ├── profile/page.tsx
-│   │   └── profile/update/page.tsx
-│   ├── all-books/page.tsx
-│   ├── api/auth/[...allbolt]/route.ts
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   ├── home/
-│   │   ├── Banner.tsx
-│   │   ├── Marquee.tsx
-│   │   ├── FeaturedBooks.tsx
-│   │   ├── WhyChooseUs.tsx
-│   │   └── Testimonials.tsx
-│   ├── books/
-│   │   ├── BookCard.tsx
-│   │   ├── Sidebar.tsx
-│   │   └── SearchBar.tsx
-│   └── ui/
-├── lib/
-│   ├── auth.ts
-│   ├── db.ts
-│   └── data.json
-├── models/
-│   └── Book.ts
-├── public/
-└── tailwind.config.ts
+app/
+├── (auth)/
+│   ├── login/page.js
+│   └── register/page.js
+├── (private)/
+│   ├── book/[id]/page.js
+│   ├── profile/page.js
+│   └── profile/update/page.js
+├── all-books/page.js
+├── api/
+│   ├── auth/
+│   │   ├── [...allbolt]/route.js
+│   │   └── google/route.js
+│   └── books/
+│       ├── route.js
+│       └── [id]/route.js
+├── about/page.js
+├── contact/page.js
+├── privacy/page.js
+├── terms/page.js
+├── error.js
+├── loading.js
+├── not-found.js
+├── layout.js
+├── page.js
+└── globals.css
+components/
+├── layout/
+│   ├── Navbar.js
+│   └── Footer.js
+├── home/
+│   ├── Banner.js
+│   ├── Marquee.js
+│   ├── FeaturedBooks.js
+│   ├── WhyChooseUs.js
+│   └── Testimonials.js
+└── books/
+    ├── BookCard.js
+    ├── Sidebar.js
+    └── SearchBar.js
+lib/
+├── auth-server.js
+├── auth.js
+└── data.json
+hooks/
+└── useAuth.js
 ```
 
-## 🔐 Authentication Features
+## Environment Variables
 
-- **Email/Password Login**: Traditional authentication method
-- **Google Social Login**: Quick and easy sign-in with Google
-- **Protected Routes**: Private routes for book details and user profiles
-- **Session Management**: Secure session handling with BetterAuth
-- **Profile Updates**: Users can update their name and profile image
+| Variable | Description |
+|----------|-------------|
+| `BETTER_AUTH_URL` | Server-side base URL (e.g. http://localhost:3000) |
+| `NEXTAUTH_URL` | Alias for BetterAuth URL |
+| `NEXT_PUBLIC_NEXTAUTH_URL` | Client-side base URL (must start with NEXT_PUBLIC_) |
+| `BETTER_AUTH_SECRET` | Secret key for session encryption |
+| `GOOGLE_CLIENT_ID` | Google OAuth client ID |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret |
 
-## 📚 Book Management
+## Pages Overview
 
-- **12 Sample Books**: Pre-populated with diverse content
-- **Category System**: Story, Tech, and Science categories
-- **Search Functionality**: Real-time search by book title
-- **Availability Tracking**: Shows available copies for each book
-- **Borrowing System**: Simulated book borrowing with confirmation
+- **Home**: Banner with CTA, marquee announcements, featured books, why-choose-us section, testimonials
+- **All Books**: Full catalog with search bar and category sidebar
+- **Book Details** (private): Book cover, description, availability, borrow button
+- **Profile** (private): User info display and update form
+- **Login / Register**: Email/password forms with Google OAuth option
 
-## 🎨 Design Features
+## Deployment
 
-- **Responsive Layout**: Mobile-first design approach
-- **Modern UI**: Clean and intuitive interface
-- **Smooth Animations**: Engaging user experience
-- **Accessibility**: Semantic HTML and ARIA labels
-- **Dark Mode Support**: DaisyUI theme system
+The app is deployed on Vercel. To deploy your own fork:
 
-## 🚀 Deployment
-
-### Vercel Deployment
 1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
-
-### Render Deployment
-1. Push your code to GitHub
-2. Create a new Web Service on Render
-3. Connect your repository
-4. Add environment variables
-5. Deploy!
-
-## 📞 Contact
-
-For any inquiries or support, please contact:
-- Email: saminmahbub19@gmail.com
-- GitHub: samin.77
-
----
-
-**Empowering readers worldwide with digital library experience** 📚✨
+2. Import the repository in Vercel
+3. Add all environment variables in Vercel dashboard
+4. Deploy
