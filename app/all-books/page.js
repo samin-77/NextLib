@@ -1,58 +1,63 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import BookCard from '../../components/books/BookCard';
 import SearchBar from '../../components/books/SearchBar';
 import Sidebar from '../../components/books/Sidebar';
 
 const AllBooksPage = () => {
   const [books, setBooks] = useState([]);
-  const [filteredBooks, setFilteredBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchBooks = async () => {
       try {
-        const response = await fetch('/api/books');
+        const response = await fetch('/api/books', { signal: controller.signal });
         const data = await response.json();
-        setBooks(data);
-        setFilteredBooks(data);
+        if (Array.isArray(data)) {
+          setBooks(data);
+        }
       } catch (error) {
-        console.error('Error fetching books:', error);
+        if (error.name !== 'AbortError') {
+          console.error('Error fetching books:', error);
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchBooks();
+    return () => controller.abort();
   }, []);
 
-  useEffect(() => {
+  const filteredBooks = useMemo(() => {
     let filtered = books;
 
-    // Filter by category
     if (selectedCategory !== 'All') {
       filtered = filtered.filter(book => book.category === selectedCategory);
     }
 
-    // Filter by search term
     if (searchTerm) {
+      const term = searchTerm.toLowerCase();
       filtered = filtered.filter(book =>
-        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+        book.title.toLowerCase().includes(term) ||
+        book.author.toLowerCase().includes(term)
       );
     }
 
-    setFilteredBooks(filtered);
+    return filtered;
   }, [books, selectedCategory, searchTerm]);
 
-  const handleCategoryFilter = (category) => {
+  const handleCategoryFilter = useCallback((category) => {
     setSelectedCategory(category);
-  };
+  }, []);
 
-  const handleSearch = (term) => {
+  const handleSearch = useCallback((term) => {
     setSearchTerm(term);
-  };
+  }, []);
 
   if (loading) {
     return (

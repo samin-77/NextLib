@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Privacy Policy - nextlib',
+  description: 'Privacy policy for nextlib book borrowing platform.',
+};
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-[80vh] bg-base-200/30">

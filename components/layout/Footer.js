@@ -24,6 +24,7 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Follow us on Twitter"
             className="hover:text-primary"
           >
             <svg
@@ -40,6 +41,7 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Follow us on Facebook"
             className="hover:text-primary"
           >
             <svg
@@ -56,6 +58,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Follow us on Instagram"
             className="hover:text-primary"
           >
             <svg
@@ -77,7 +80,7 @@ const Footer = () => {
           <br />
           Online Book Borrowing Platform
         </p>
-        <p>Copyright © 2024 - All rights reserved</p>
+        <p>Copyright &copy; {new Date().getFullYear()} - All rights reserved</p>
       </div>
       
       <div>

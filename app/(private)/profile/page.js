@@ -65,7 +65,7 @@ const ProfilePage = () => {
                     
                     <div className="stat">
                       <div className="stat-title">User ID</div>
-                      <div className="stat-value text-lg">{user.id?.slice(0, 8)}...</div>
+                      <div className="stat-value text-lg">{user.id ? `${user.id.slice(0, 8)}...` : 'N/A'}</div>
                     </div>
                   </div>
                   
@@ -87,10 +87,8 @@ const ProfilePage = () => {
                 </div>
                 
                 <div className="card-actions justify-center w-full mt-6">
-                  <Link href="/profile/update">
-                    <button className="btn btn-primary btn-lg">
-                      Update Profile
-                    </button>
+                  <Link href="/profile/update" className="btn btn-primary btn-lg">
+                    Update Profile
                   </Link>
                 </div>
               </div>

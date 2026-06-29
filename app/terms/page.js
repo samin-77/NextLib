@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Terms of Service - nextlib',
+  description: 'Terms of service for nextlib book borrowing platform.',
+};
+
 export default function TermsPage() {
   return (
     <div className="min-h-[80vh] bg-base-200/30">

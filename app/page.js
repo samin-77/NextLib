@@ -34,15 +34,11 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/login">
-                <button className="btn btn-primary btn-lg">
-                  Login
-                </button>
+              <Link href="/login" className="btn btn-primary btn-lg">
+                Login
               </Link>
-              <Link href="/register">
-                <button className="btn btn-outline btn-primary btn-lg">
-                  Register
-                </button>
+              <Link href="/register" className="btn btn-outline btn-primary btn-lg">
+                Register
               </Link>
             </div>
             

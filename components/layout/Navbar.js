@@ -1,22 +1,25 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { authClient } from '../../lib/auth';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
   const { user, isLoading } = useAuth();
+  const router = useRouter();
 
   const handleLogout = async () => {
     try {
       await authClient.signOut();
-      window.location.href = '/';
+      router.push('/');
     } catch (error) {
-      console.error('Logout error:', error);
+      toast.error('Logout failed');
     }
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-lg">
+    <nav className="navbar bg-base-100 shadow-lg">
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost text-xl font-bold text-primary">
           📚 nextlib
@@ -128,7 +131,7 @@ const Navbar = () => {
           )}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

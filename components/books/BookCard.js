@@ -7,7 +7,7 @@ const BookCard = ({ book, featured = false }) => {
       <figure className="h-64 relative">
         <Image
           src={book.image_url}
-          alt={book.title}
+          alt={book.title || 'Book cover'}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -23,10 +23,8 @@ const BookCard = ({ book, featured = false }) => {
           <div className="text-sm text-success font-semibold">
             {book.available_quantity} copies left
           </div>
-          <Link href={`/book/${book.id}`}>
-            <button className="btn btn-primary btn-sm">
-              {featured ? 'View Details' : 'Details'}
-            </button>
+          <Link href={`/book/${book.id}`} className="btn btn-primary btn-sm">
+            {featured ? 'View Details' : 'Details'}
           </Link>
         </div>
       </div>

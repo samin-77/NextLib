@@ -8,20 +8,26 @@ const FeaturedBooks = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchBooks = async () => {
       try {
-        const response = await fetch('/api/books');
+        const response = await fetch('/api/books', { signal: controller.signal });
         const data = await response.json();
-        // Get top 4 books for featured section
-        setBooks(data.slice(0, 4));
+        if (Array.isArray(data)) {
+          setBooks(data.slice(0, 4));
+        }
       } catch (error) {
-        console.error('Error fetching books:', error);
+        if (error.name !== 'AbortError') {
+          console.error('Error fetching books:', error);
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchBooks();
+    return () => controller.abort();
   }, []);
 
   if (loading) {
@@ -47,14 +53,12 @@ const FeaturedBooks = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {books.map((book) => (
-            <BookCard key={book.id} book={book} featured={true} />
+            <BookCard key={book.id} book={book} featured />
           ))}
         </div>
         <div className="text-center mt-8">
-          <Link href="/all-books">
-            <button className="btn btn-outline btn-primary">
-              View All Books
-            </button>
+          <Link href="/all-books" className="btn btn-outline btn-primary">
+            View All Books
           </Link>
         </div>
       </div>

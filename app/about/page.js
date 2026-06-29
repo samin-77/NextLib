@@ -1,5 +1,10 @@
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'About - nextlib',
+  description: 'Learn about nextlib, the online book borrowing platform.',
+};
+
 export default function AboutPage() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center bg-base-200/30">

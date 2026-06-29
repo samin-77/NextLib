@@ -17,7 +17,7 @@ const LoginPage = () => {
 
     try {
       const result = await authClient.signIn.email({
-        email,
+        email: email.trim(),
         password,
       });
 

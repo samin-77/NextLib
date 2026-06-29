@@ -7,19 +7,28 @@ export const useAuth = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const checkAuth = async () => {
       try {
         const session = await authClient.getSession();
-        setUser(session?.data?.user || null);
+        if (!controller.signal.aborted) {
+          setUser(session?.data?.user || null);
+        }
       } catch (error) {
-        console.error('Auth check error:', error);
-        setUser(null);
+        if (error.name !== 'AbortError') {
+          console.error('Auth check error:', error);
+          setUser(null);
+        }
       } finally {
-        setIsLoading(false);
+        if (!controller.signal.aborted) {
+          setIsLoading(false);
+        }
       }
     };
 
     checkAuth();
+    return () => controller.abort();
   }, []);
 
   return { user, isLoading };

@@ -1,4 +1,4 @@
-'use client';
+
 
 const Sidebar = ({ onCategoryFilter, selectedCategory }) => {
   const categories = ['All', 'Story', 'Tech', 'Science'];

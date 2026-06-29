@@ -13,26 +13,31 @@ const BookDetailsPage = ({ params }) => {
   const router = useRouter();
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchBook = async () => {
       try {
-        const response = await fetch(`/api/books/${params.id}`);
+        const response = await fetch(`/api/books/${params.id}`, { signal: controller.signal });
+        if (!response.ok) {
+          const err = await response.json();
+          toast.error(err.error || 'Book not found');
+          router.push('/all-books');
+          return;
+        }
         const data = await response.json();
-        
-        if (response.ok) {
-          setBook(data);
-        } else {
-          toast.error('Book not found');
+        setBook(data);
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          toast.error('Error fetching book details');
           router.push('/all-books');
         }
-      } catch (error) {
-        toast.error('Error fetching book details');
-        router.push('/all-books');
       } finally {
         setLoading(false);
       }
     };
 
     fetchBook();
+    return () => controller.abort();
   }, [params.id, router]);
 
   useEffect(() => {
@@ -56,14 +61,13 @@ const BookDetailsPage = ({ params }) => {
 
     setBorrowing(true);
     try {
-      // Simulate borrowing process
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       setBook(prev => ({
         ...prev,
         available_quantity: prev.available_quantity - 1
       }));
-      
+
       toast.success('Book borrowed successfully!');
     } catch (error) {
       toast.error('Error borrowing book');
@@ -92,7 +96,7 @@ const BookDetailsPage = ({ params }) => {
             <div className="relative h-96 lg:h-full w-full">
               <Image
                 src={book.image_url}
-                alt={book.title}
+                alt={book.title || 'Book cover'}
                 fill
                 className="object-cover rounded-l-2xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"

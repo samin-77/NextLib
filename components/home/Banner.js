@@ -12,10 +12,8 @@ const Banner = () => {
             Discover thousands of books across multiple categories. 
             Borrow digitally and enjoy reading from anywhere, anytime.
           </p>
-          <Link href="/all-books">
-            <button className="btn btn-primary btn-lg">
-              Browse Now
-            </button>
+          <Link href="/all-books" className="btn btn-primary btn-lg">
+            Browse Now
           </Link>
         </div>
       </div>
