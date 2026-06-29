@@ -40,9 +40,15 @@ const RegisterPage = () => {
 
   const handleGoogleRegister = async () => {
     try {
-      window.location.href = await authClient.signIn.social({
+      const { data } = await authClient.signIn.social({
         provider: 'google',
+        callbackURL: '/',
       });
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        toast.error('Failed to get login URL');
+      }
     } catch (error) {
       toast.error('Google registration failed');
     }
